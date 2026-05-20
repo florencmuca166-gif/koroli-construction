@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-charcoal: #1C1C1E;
+  --color-gold: #C9A84C;
+  --color-offwhite: #F5F3EF;
+  --color-slate: #6B7280;
+  --color-amber-cta: #D97706;
+  --color-navy: #0a1628;
+  --color-navy-light: #0f2040;
+
+  --font-heading: var(--font-montserrat);
+  --font-body: var(--font-inter);
+  --font-accent: var(--font-playfair);
+}
+
+:root {
+  --background: #F5F3EF;
+  --foreground: #1C1C1E;
+}
+
+body {
+  background: #F5F3EF;
+  color: #1C1C1E;
+}
+
+.blueprint-grid {
+  background-color: #0a1628;
+  background-image:
+    linear-gradient(rgba(100, 160, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 160, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(rgba(100, 160, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 160, 255, 0.06) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+}
