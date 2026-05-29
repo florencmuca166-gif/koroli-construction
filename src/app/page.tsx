@@ -3,6 +3,8 @@ import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
 import ProjectCard from "@/components/ProjectCard";
+import SectionHeader from "@/components/SectionHeader";
+import AnimatedTrustBadges from "@/components/AnimatedTrustBadges";
 
 export const metadata: Metadata = {
   title: "Koroli Construction | Toronto General Contractor",
@@ -87,48 +89,19 @@ export default function HomePage() {
       <HeroSection />
 
       {/* Trust badges */}
-      <section className="bg-[#1C1C1E] py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-            {trustBadges.map((badge) => (
-              <div key={badge.label} className="text-center">
-                <p
-                  className="text-[#C9A84C] text-xl font-black tracking-wide"
-                  style={{ fontFamily: "var(--font-montserrat)" }}
-                >
-                  {badge.label}
-                </p>
-                <p className="text-gray-400 text-xs mt-0.5">{badge.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <AnimatedTrustBadges badges={trustBadges} />
 
       {/* Services */}
       <section className="py-20 bg-[#F5F3EF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p
-              className="text-[#D97706] text-xs font-bold tracking-[0.3em] uppercase mb-3"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              What We Do
-            </p>
-            <h2
-              className="text-3xl sm:text-4xl font-black text-[#1C1C1E]"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              Full-Service Construction
-            </h2>
-            <p className="text-[#6B7280] mt-4 max-w-xl mx-auto text-base leading-relaxed">
-              From concept to completion, Koroli Construction delivers
-              exceptional results for Toronto&apos;s most demanding projects.
-            </p>
-          </div>
+          <SectionHeader
+            eyebrow="What We Do"
+            title="Full-Service Construction"
+            subtitle="From concept to completion, Koroli Construction delivers exceptional results for Toronto's most demanding projects."
+          />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s) => (
-              <ServiceCard key={s.title} {...s} />
+            {services.map((s, i) => (
+              <ServiceCard key={s.title} {...s} index={i} />
             ))}
           </div>
           <div className="text-center mt-12">
@@ -146,23 +119,10 @@ export default function HomePage() {
       {/* Featured projects */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p
-              className="text-[#D97706] text-xs font-bold tracking-[0.3em] uppercase mb-3"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              Our Work
-            </p>
-            <h2
-              className="text-3xl sm:text-4xl font-black text-[#1C1C1E]"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              Featured Projects
-            </h2>
-          </div>
+          <SectionHeader eyebrow="Our Work" title="Featured Projects" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProjects.map((p) => (
-              <ProjectCard key={p.title} {...p} />
+            {featuredProjects.map((p, i) => (
+              <ProjectCard key={p.title} {...p} index={i} />
             ))}
           </div>
           <div className="text-center mt-12">
@@ -178,14 +138,14 @@ export default function HomePage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="bg-[#1C1C1E] py-20">
+      <section className="cta-animated-bg py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2
             className="text-3xl sm:text-5xl font-black text-white mb-4"
             style={{ fontFamily: "var(--font-montserrat)" }}
           >
             Ready to Build Something{" "}
-            <span style={{ color: "#C9A84C" }}>Exceptional?</span>
+            <span className="shimmer-gold">Exceptional?</span>
           </h2>
           <p
             className="text-gray-400 text-lg mb-10 max-w-xl mx-auto"
@@ -195,7 +155,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center px-10 py-4 rounded font-bold text-base tracking-wide bg-[#D97706] text-white hover:bg-[#b45309] transition-colors duration-200"
+            className="inline-flex items-center justify-center px-10 py-4 rounded font-bold text-base tracking-wide bg-[#D97706] text-white hover:bg-[#b45309] transition-colors duration-200 pulse-glow"
             style={{ fontFamily: "var(--font-montserrat)" }}
           >
             Get Your Free Quote

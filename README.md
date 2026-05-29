@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Koroli Construction — Marketing Website
+
+A professional, SEO-optimised marketing site for a Toronto-based general contractor. Built to rank locally and convert visitors into leads.
+
+## Live Pages
+
+| Route | Content |
+|---|---|
+| `/` | Hero, services overview, trust indicators |
+| `/services` | Full service catalogue with project cards |
+| `/projects` | Portfolio gallery |
+| `/about` | Company story and team |
+| `/contact` | Enquiry form with client-side validation |
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 |
+| Animations | Framer Motion |
+| Forms | React Hook Form |
+| UI | Headless UI |
+| Fonts | Montserrat · Inter · Playfair Display |
+
+## SEO Features
+
+- Per-page `metadata` exports with Open Graph tags
+- JSON-LD `GeneralContractor` schema injected in root layout
+- Canonical URL: `https://koroliconstruction.ca`
+- Semantic HTML throughout
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── page.tsx          # Home
+│   ├── about/
+│   ├── contact/
+│   ├── projects/
+│   └── services/
+└── components/
+    ├── Navbar.tsx
+    ├── Footer.tsx
+    ├── HeroSection.tsx
+    ├── AnimatedTrustBadges.tsx
+    ├── ProjectCard.tsx
+    ├── ServiceCard.tsx
+    └── SectionHeader.tsx
+```
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+git clone https://github.com/florencmuca166-gif/koroli-construction
+cd koroli-construction
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## What This Demonstrates
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js App Router with full TypeScript
+- Local SEO implementation (structured data, metadata API)
+- Scroll-triggered animations with Framer Motion
+- Accessible UI components via Headless UI
+- Clean multi-page marketing site architecture
 
-## Learn More
+## Author
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Florenc Muca** — Full-Stack Developer
+- GitHub: [@florencmuca166-gif](https://github.com/florencmuca166-gif)
+- Email: florencmuca166@gmail.com
